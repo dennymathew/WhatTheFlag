@@ -18,10 +18,6 @@ enum AlertItem: Identifiable {
         }
     }
 }
-//struct AlertItem: Identifiable {
-//    var type: WFAlertItem
-//    var id: Int { type.rawValue }
-//}
 struct ContentView: View {
     let numberOfTurns = 10
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK"].shuffled()
@@ -99,8 +95,8 @@ struct ContentView: View {
             scoreMessage = "Congratulations! That adds 10 more points in your bucket!"
             score += 10
         } else {
-            scoreTitle = "Wrong answer!"
-            scoreMessage = "Thats bad luck! You lost 5 points from your bucket!"
+            scoreTitle = "Uh ohh.. You're wrong!"
+            scoreMessage = "That was the flag of \(countries[number]) you selected! You lost 5 points from your bucket!"
             score -= 5
         }
         alertItem = .score
